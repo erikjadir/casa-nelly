@@ -73,20 +73,29 @@ export default function Home() {
       <section className="max-w-7xl mx-auto px-6 lg:px-10 pt-2 pb-20 md:pt-8 md:pb-24">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           
-          <div>
-            <div>
+          <div className="order-2 lg:order-1">
 
-  <div className="mb-2">
-    <Image
-      src="/images/logo.png"
-      alt="Casa Nelly"
-      width={280}
-      height={280}
-      priority
-      className="w-[180px] sm:w-[220px] lg:w-[280px] h-auto"
-    />
-  </div>
+            <Image
+              src="/images/logo.png"
+              alt="Casa Nelly"
+              width={280}
+              height={280}
+              priority
+              className="w-[180px] sm:w-[220px] lg:w-[280px] h-auto"
+            />
 
+            <div className="block lg:hidden mt-4 mb-8">
+              <div className="overflow-hidden rounded-[28px] shadow-xl">
+                <Image
+                  src="/images/hero.jpg"
+                  alt="Maestra Nelly"
+                  width={900}
+                  height={1200}
+                  priority
+                  className="w-full h-auto object-cover"
+                />
+              </div>
+            </div>
 
             <h1 className="mt-6 text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight text-[#70703A]">
               Aprende repostería,
@@ -109,10 +118,9 @@ export default function Home() {
               </button>
             </div>
           </div>
-          </div>
 
           {/* FOTO HERO OPTIMIZADA */}
-          <div className="w-full dynamic-img-container">
+<div className="hidden lg:block order-1 lg:order-2 w-full dynamic-img-container">
             <div className="overflow-hidden rounded-[28px] sm:rounded-[36px] shadow-xl relative max-h-87.5 sm:max-h-125 lg:max-h-150">
               <Image
                 src="/images/hero.jpg"
