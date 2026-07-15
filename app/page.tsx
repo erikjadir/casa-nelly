@@ -1,78 +1,14 @@
-"use client";
-
-import { useState } from "react";
 import Image from "next/image";
+import { Section } from "@/components/ui/Section";
+import { Card } from "@/components/ui/Card";
 
 export default function Home() {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-
   return (
     <main className="bg-[#FAF7F2] min-h-screen selection:bg-[#70703A]/20">
-      
-{/* BARRA DE NAVEGACIÓN FLOTANTE */}
-      <header className="sticky top-0 z-50 w-full bg-[#FAF7F2]/90 backdrop-blur-md border-b border-[#5E5145]/10 transition-all duration-300">
-        <div className="max-w-7xl mx-auto px-6 lg:px-10 py-4 flex items-center justify-between">
-          
-          {/* LOGOTIPO EN TEXTO */}
-          <a href="#" className="flex flex-col group transition-opacity duration-200 hover:opacity-90">
-            <span className="text-[#70703A] font-bold tracking-[0.15em] text-lg leading-tight">
-              CASA NELLY
-            </span>
-            <p className="text-xs text-[#5E5145] tracking-wide font-light">
-              Escuela de Artes Dulces
-            </p>
-          </a>
-
-          {/* MENÚ COMPLETO (ESCRITORIO) */}
-          <nav className="hidden md:flex gap-10 text-[#5E5145] font-medium items-center">
-            <a href="#" className="relative py-1 hover:text-[#70703A] transition-colors duration-200 after:content-[''] after:absolute after:w-full after:scale-x-0 after:h-0.5 after:bottom-0 after:left-0 after:bg-[#70703A] after:origin-bottom-right hover:after:scale-x-100 hover:after:origin-bottom-left after:transition-transform after:duration-300">Inicio</a>
-            <a href="#" className="relative py-1 hover:text-[#70703A] transition-colors duration-200 after:content-[''] after:absolute after:w-full after:scale-x-0 after:h-0.5 after:bottom-0 after:left-0 after:bg-[#70703A] after:origin-bottom-right hover:after:scale-x-100 hover:after:origin-bottom-left after:transition-transform after:duration-300">Cursos</a>
-            <a href="#" className="relative py-1 hover:text-[#70703A] transition-colors duration-200 after:content-[''] after:absolute after:w-full after:scale-x-0 after:h-0.5 after:bottom-0 after:left-0 after:bg-[#70703A] after:origin-bottom-right hover:after:scale-x-100 hover:after:origin-bottom-left after:transition-transform after:duration-300">Diplomado</a>
-            <a href="#" className="relative py-1 hover:text-[#70703A] transition-colors duration-200 after:content-[''] after:absolute after:w-full after:scale-x-0 after:h-0.5 after:bottom-0 after:left-0 after:bg-[#70703A] after:origin-bottom-right hover:after:scale-x-100 hover:after:origin-bottom-left after:transition-transform after:duration-300">Galería</a>
-            <a href="#" className="relative py-1 hover:text-[#70703A] transition-colors duration-200 after:content-[''] after:absolute after:w-full after:scale-x-0 after:h-0.5 after:bottom-0 after:left-0 after:bg-[#70703A] after:origin-bottom-right hover:after:scale-x-100 hover:after:origin-bottom-left after:transition-transform after:duration-300">Contacto</a>
-          </nav>
-
-          {/* BOTÓN HAMBURGUESA (MÓVIL) */}
-          <button
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="md:hidden p-2 text-[#5E5145] hover:text-[#70703A] focus:outline-none rounded-lg hover:bg-[#5E5145]/5 transition-colors"
-            aria-label="Abrir menú de navegación"
-          >
-            <svg
-              className="w-6 h-6 transition-transform duration-200"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              {isMenuOpen ? (
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-              ) : (
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-              )}
-            </svg>
-          </button>
-        </div>
-
-        {/* MENÚ DESPLEGABLE CON ANIMACIÓN SUTIL (MÓVIL) */}
-        <div
-          className={`md:hidden overflow-hidden transition-all duration-300 ease-in-out bg-[#FAF7F2] border-b border-[#5E5145]/10 ${
-            isMenuOpen ? "max-h-64 opacity-100" : "max-h-0 opacity-0 pointer-events-none"
-          }`}
-        >
-          <nav className="flex flex-col px-6 py-4 gap-4 text-[#5E5145] font-medium">
-            <a href="#" onClick={() => setIsMenuOpen(false)} className="py-1 hover:text-[#70703A] transition-colors">Inicio</a>
-            <a href="#" onClick={() => setIsMenuOpen(false)} className="py-1 hover:text-[#70703A] transition-colors">Cursos</a>
-            <a href="#" onClick={() => setIsMenuOpen(false)} className="py-1 hover:text-[#70703A] transition-colors">Diplomado</a>
-            <a href="#" onClick={() => setIsMenuOpen(false)} className="py-1 hover:text-[#70703A] transition-colors">Galería</a>
-            <a href="#" onClick={() => setIsMenuOpen(false)} className="py-1 hover:text-[#70703A] transition-colors">Contacto</a>
-          </nav>
-        </div>
-      </header>
-
       {/* HERO SECTION */}
-      <section className="max-w-7xl mx-auto px-6 lg:px-10 pt-2 pb-20 md:pt-8 md:pb-24">
+      <Section className="pt-2 pb-20 md:pt-8 md:pb-24">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-          
+
           <div className="order-2 lg:order-1">
 
             <Image
@@ -120,7 +56,7 @@ export default function Home() {
           </div>
 
           {/* FOTO HERO OPTIMIZADA */}
-<div className="hidden lg:block order-1 lg:order-2 w-full dynamic-img-container">
+          <div className="hidden lg:block order-1 lg:order-2 w-full dynamic-img-container">
             <div className="overflow-hidden rounded-[28px] sm:rounded-[36px] shadow-xl relative max-h-87.5 sm:max-h-125 lg:max-h-150">
               <Image
                 src="/images/hero.jpg"
@@ -134,10 +70,10 @@ export default function Home() {
           </div>
 
         </div>
-      </section>
+      </Section>
 
       {/* SECCIÓN: CONOCE A NELLY */}
-      <section className="max-w-7xl mx-auto px-6 lg:px-10 py-16 md:py-24 border-t border-[#5E5145]/5">
+      <Section id="escuela" className="py-16 md:py-24 border-t border-[#5E5145]/5">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
 
           {/* FOTO NELLY OPTIMIZADA */}
@@ -176,37 +112,37 @@ export default function Home() {
 
             {/* Micro-tarjetas adaptativas */}
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-8 sm:mt-10">
-              <div className="bg-white rounded-2xl p-4 sm:p-5 text-center shadow-sm border border-[#5E5145]/5">
+              <Card className="rounded-2xl p-4 sm:p-5 text-center">
                 <div className="text-3xl" aria-hidden="true">🌸</div>
                 <p className="mt-2 font-semibold text-[#70703A] text-sm sm:text-base">
                   Repostería
                 </p>
-              </div>
+              </Card>
 
-              <div className="bg-white rounded-2xl p-4 sm:p-5 text-center shadow-sm border border-[#5E5145]/5">
+              <Card className="rounded-2xl p-4 sm:p-5 text-center">
                 <div className="text-3xl" aria-hidden="true">🎂</div>
                 <p className="mt-2 font-semibold text-[#70703A] text-sm sm:text-base">
                   Decoración
                 </p>
-              </div>
+              </Card>
 
-              <div className="bg-white rounded-2xl p-4 sm:p-5 text-center shadow-sm border border-[#5E5145]/5">
+              <Card className="rounded-2xl p-4 sm:p-5 text-center">
                 <div className="text-3xl" aria-hidden="true">💡</div>
                 <p className="mt-2 font-semibold text-[#70703A] text-sm sm:text-base">
                   Emprendimiento
                 </p>
-              </div>
+              </Card>
             </div>
           </div>
 
         </div>
-      </section>
+      </Section>
 
       {/* SECCIÓN: PILARES */}
-      <section className="max-w-7xl mx-auto px-6 lg:px-10 pb-24">
+      <Section className="pb-24">
         <div className="grid md:grid-cols-3 gap-6 lg:gap-8">
 
-          <div className="bg-white rounded-3xl p-6 sm:p-8 shadow-sm border border-[#5E5145]/5 hover:shadow-md transition-shadow">
+          <Card className="rounded-3xl p-6 sm:p-8 hover:shadow-md transition-shadow">
             <div className="text-4xl" aria-hidden="true">🌸</div>
             <h3 className="mt-4 text-xl sm:text-2xl font-bold text-[#70703A]">
               Repostería Artesanal
@@ -214,9 +150,9 @@ export default function Home() {
             <p className="mt-3 text-sm sm:text-base text-[#5E5145] leading-relaxed">
               Aprende paso a paso técnicas para elaborar postres, pasteles y creaciones dulces.
             </p>
-          </div>
+          </Card>
 
-          <div className="bg-white rounded-3xl p-6 sm:p-8 shadow-sm border border-[#5E5145]/5 hover:shadow-md transition-shadow">
+          <Card className="rounded-3xl p-6 sm:p-8 hover:shadow-md transition-shadow">
             <div className="text-4xl" aria-hidden="true">🎂</div>
             <h3 className="mt-4 text-xl sm:text-2xl font-bold text-[#70703A]">
               Decoración de Pasteles
@@ -224,9 +160,9 @@ export default function Home() {
             <p className="mt-3 text-sm sm:text-base text-[#5E5145] leading-relaxed">
               Desarrolla tu creatividad y aprende a transformar cada pastel en una obra especial.
             </p>
-          </div>
+          </Card>
 
-          <div className="bg-white rounded-3xl p-6 sm:p-8 shadow-sm border border-[#5E5145]/5 hover:shadow-md transition-shadow">
+          <Card className="rounded-3xl p-6 sm:p-8 hover:shadow-md transition-shadow">
             <div className="text-4xl" aria-hidden="true">💡</div>
             <h3 className="mt-4 text-xl sm:text-2xl font-bold text-[#70703A]">
               Aprende y Emprende
@@ -234,10 +170,10 @@ export default function Home() {
             <p className="mt-3 text-sm sm:text-base text-[#5E5145] leading-relaxed">
               Convierte tu pasión por la repostería en una oportunidad para generar ingresos.
             </p>
-          </div>
+          </Card>
 
         </div>
-      </section>
+      </Section>
     </main>
   );
 }
