@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { Section } from "@/components/ui/Section";
 import { Card } from "@/components/ui/Card";
 import { WhatsAppButton } from "@/components/ui/WhatsAppButton";
@@ -112,6 +113,25 @@ export default function ContactoPage() {
         <div className="mt-8">
           <FAQAccordion items={faqs} />
         </div>
+      </Section>
+
+      {/* CTA CURSOS */}
+      <Section className="pb-24 border-t border-[#5E5145]/5 pt-16">
+        <Card className="rounded-3xl p-8 sm:p-12 text-center max-w-2xl mx-auto">
+          <h2 className="text-2xl sm:text-3xl font-bold text-[#70703A]">
+            ¿Prefieres aprender con nosotros?
+          </h2>
+          <p className="mt-3 text-[#5E5145] leading-relaxed">
+            Conoce nuestros cursos presenciales y aprende con el
+            acompañamiento de la Maestra Nelly.
+          </p>
+          <Link
+            href="/cursos"
+            className="inline-flex items-center gap-2 bg-[#70703A] text-white px-8 py-4 rounded-full font-medium hover:opacity-90 transition shadow-md active:scale-95 mt-6"
+          >
+            Ver Cursos
+          </Link>
+        </Card>
       </Section>
     </main>
   );

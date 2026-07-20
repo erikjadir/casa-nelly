@@ -13,14 +13,41 @@ export type Receta = ContenidoBase & {
   pasos: string[];
 };
 
+export type DestacadoTipo =
+  | "consejo"
+  | "importante"
+  | "recomendacion"
+  | "refrigeracion"
+  | "alimentacion";
+
+export type Destacado = {
+  tipo: DestacadoTipo;
+  texto: string;
+};
+
 export type SeccionGuia = {
+  id: string;
   titulo: string;
-  contenido: string;
+  icono: string;
+  parrafos?: string[];
+  lista?: string[];
+  destacados?: Destacado[];
+};
+
+export type FAQItem = {
+  pregunta: string;
+  respuesta: string;
 };
 
 export type Guia = ContenidoBase & {
   tipo: "guia";
+  nivel?: string;
+  tiempoLectura?: string;
   secciones: SeccionGuia[];
+  consejoMaestra?: string;
+  faq?: FAQItem[];
+  recetasRelacionadas?: string[];
+  guiasRelacionadas?: string[];
 };
 
 export type Tip = ContenidoBase & {

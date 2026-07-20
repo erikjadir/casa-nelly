@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import { Section } from "@/components/ui/Section";
 import { Card } from "@/components/ui/Card";
 
@@ -46,12 +47,12 @@ export default function Home() {
             </p>
 
             <div className="flex flex-wrap gap-4 mt-8 sm:mt-10">
-              <button className="w-full sm:w-auto bg-[#70703A] text-white px-8 py-4 rounded-full font-medium hover:opacity-90 transition shadow-md active:scale-95">
+              <Link
+                href="/cursos"
+                className="w-full sm:w-auto text-center bg-[#70703A] text-white px-8 py-4 rounded-full font-medium hover:opacity-90 transition shadow-md active:scale-95"
+              >
                 Ver Cursos
-              </button>
-              <button className="w-full sm:w-auto border border-[#70703A] text-[#70703A] px-8 py-4 rounded-full font-medium hover:bg-[#70703A] hover:text-white transition active:scale-95">
-                Diplomado
-              </button>
+              </Link>
             </div>
           </div>
 
@@ -132,6 +133,21 @@ export default function Home() {
                   Emprendimiento
                 </p>
               </Card>
+            </div>
+
+            <div className="flex flex-wrap gap-4 mt-8 sm:mt-10">
+              <Link
+                href="/recetas"
+                className="w-full sm:w-auto text-center bg-[#70703A] text-white px-8 py-4 rounded-full font-medium hover:opacity-90 transition shadow-md active:scale-95"
+              >
+                Explorar Recetas
+              </Link>
+              <Link
+                href="/contacto"
+                className="w-full sm:w-auto text-center border border-[#70703A] text-[#70703A] px-8 py-4 rounded-full font-medium hover:bg-[#70703A] hover:text-white transition active:scale-95"
+              >
+                Contáctanos
+              </Link>
             </div>
           </div>
 

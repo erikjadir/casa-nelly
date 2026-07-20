@@ -2,13 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
-
-const navLinks = [
-  { label: "Inicio", href: "/" },
-  { label: "La Escuela", href: "/#escuela" },
-  { label: "Recetas", href: "/recetas" },
-  { label: "Contacto", href: "/contacto" },
-];
+import { navLinks } from "./navLinks";
 
 export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
